@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'JobsController@index');
+Route::get('/jobs/index', 'JobsController@index')->name("jobs.index");
+Route::get('/jobs/create', 'JobsController@create')->name("jobs.create");
+Route::post('/jobs/create', 'JobsController@create')->name("jobs.create");

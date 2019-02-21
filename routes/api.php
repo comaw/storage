@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('jobs', 'Api\JobController@index');
+Route::get('jobs/{id}', 'Api\JobController@one');
+Route::post('jobs', 'Api\JobController@crete');
+Route::put('jobs/{id}', 'Api\JobController@update');
+Route::delete('jobs/{id}', 'Api\JobController@delete');
